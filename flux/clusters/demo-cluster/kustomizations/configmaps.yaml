@@ -1,0 +1,16 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: configmaps
+  namespace: flux-system
+spec:
+  force: false
+  interval: 5m0s
+  path: ./flux/clusters/demo-cluster/configmaps
+  prune: true
+  dependsOn:
+    - name: deployments
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
