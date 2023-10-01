@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-app
+  namespace: demo-app
+spec:
+  selector:
+    matchLabels:
+      run: demo-app
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: demo-app
+    spec:
+      containers:
+      - name: demo-app
+        image: nikowoj900/demo-app:latest # {"$imagepolicy": "flux-system:demo-app"}
+        env:
+        - name: DEMO_DATA
+          valueFrom:
+            configMapKeyRef:
+              name: demo-app-config
+              key: demo
+        ports:
+        - containerPort: 80
+
