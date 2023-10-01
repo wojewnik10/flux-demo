@@ -11,6 +11,7 @@ export GITHUB_TOKEN=<your-token>
 export GITHUB_USER=<your-username>
 ```
 
+Next, run the `flux boostrap github` command with following parameters:
 ```flux bootstrap github \
   --components-extra=image-reflector-controller,image-automation-controller \
   --owner=$GITHUB_USER \
@@ -21,5 +22,5 @@ export GITHUB_USER=<your-username>
   --personal
   ```
 
-## Uninstall the cluster
+## Uninstall FLuxCD from the cluster
 `flux uninstall --namespace=flux-system`
