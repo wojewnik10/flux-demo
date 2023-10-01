@@ -22,5 +22,15 @@ Next, run the `flux boostrap github` command with following parameters:
   --personal
   ```
 
+## Demo deployment
+This demo showcase simple deployment with a service and a configmap. 
+There are configured flux manifests such as ImagePolicy, ImageRepository, in order to test out 
+the Flux image update automation.
+
+Whenever there is a change either in workflow file or the `index.html`, the new docker image is being build and pushed
+to the external registry with a new tag, based on the current date and timestamp. The deployment is being updated based on the new image.
+Also with the help of reloader HelmRelease, whenever the data of the configmap is changed, the deployment also gets
+reconciled.
+
 ## Uninstall FLuxCD from the cluster
 `flux uninstall --namespace=flux-system`
