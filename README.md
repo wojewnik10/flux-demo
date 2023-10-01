@@ -1,1 +1,1 @@
-# flux-demo
+### FluxCD demo repository
