@@ -30,7 +30,7 @@ jobs:
         run: |
           timestamp=$(date +%s)
           currentdate=${{ steps.date.outputs.date }}
-          echo "build_id=${{ inputs.environment-name }}-${currentdate}-${timestamp}" >> $GITHUB_OUTPUT
+          echo "build_id=${currentdate}-${timestamp}" >> $GITHUB_OUTPUT
       - name: Build Demo app
         run: docker build . -t ${{ secrets.DOCKER_USERNAME }}/demo-app:${{ steps.prep-version.outputs.build_id }}
         shell: bash
