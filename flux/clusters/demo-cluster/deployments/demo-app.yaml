@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: demo-app
-        image: nikowoj900/demo-app:2023-10-01-1696146767 # {"$imagepolicy": "flux-system:demo-app"}
+        image: nikowoj900/demo-app:2023-10-01-1696146799 # {"$imagepolicy": "flux-system:demo-app"}
         env:
         - name: DEMO_DATA
           valueFrom:
